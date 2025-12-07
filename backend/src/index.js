@@ -43,10 +43,7 @@ app.use((err, req, res, next) => {
 
 // Start server
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`✅ Server is running on port ${PORT}`);
-  console.log(`📍 Active port: ${PORT} (from ${process.env.PORT ? 'environment variable' : 'default'})`);
-  console.log(`🏥 Health check: /health`);
-  console.log(`📊 Sales API: /api/sales`);
+  console.log(`Server running on port ${PORT}`);
 });
 
 module.exports = app;
