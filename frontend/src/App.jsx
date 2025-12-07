@@ -1,16 +1,22 @@
+import { Routes, Route } from 'react-router-dom'
 import './styles/App.css'
+import Layout from './components/Layout'
 import SalesPage from './pages/SalesPage'
+import FullTableView from './pages/FullTableView'
 
 function App() {
   return (
-    <div className="app">
-      <header className="app-header">
-        <h1>Sales Management System</h1>
-      </header>
-      <main className="app-main">
-        <SalesPage />
-      </main>
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <SalesPage />
+          </Layout>
+        }
+      />
+      <Route path="/full-table" element={<FullTableView />} />
+    </Routes>
   )
 }
 

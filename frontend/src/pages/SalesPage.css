@@ -2,11 +2,39 @@
   width: 100%;
 }
 
+.sales-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
 .sales-page h2 {
   font-size: 1.5rem;
   font-weight: 600;
   color: #333;
-  margin-bottom: 1.5rem;
+  margin: 0;
+}
+
+.full-table-button {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #007bff;
+  background-color: transparent;
+  border: 1px solid #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.full-table-button:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.full-table-button:active {
+  transform: translateY(1px);
 }
 
 .loading-state,

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { fetchSales } from '../services/salesApi'
 import SalesTable from '../components/SalesTable'
 import SearchBar from '../components/SearchBar'
@@ -12,6 +13,7 @@ import './SalesPage.css'
  * Main page for displaying sales transactions
  */
 function SalesPage() {
+  const navigate = useNavigate()
   const [data, setData] = useState([])
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
@@ -89,7 +91,15 @@ function SalesPage() {
   if (loading) {
     return (
       <div className="sales-page">
-        <h2>Transactions</h2>
+        <div className="sales-page-header">
+          <h2>Transactions</h2>
+          <button
+            className="full-table-button"
+            onClick={() => navigate('/full-table')}
+          >
+            Full Table View
+          </button>
+        </div>
         <div className="loading-state">
           <p>Loading...</p>
         </div>
@@ -100,7 +110,15 @@ function SalesPage() {
   if (error) {
     return (
       <div className="sales-page">
-        <h2>Transactions</h2>
+        <div className="sales-page-header">
+          <h2>Transactions</h2>
+          <button
+            className="full-table-button"
+            onClick={() => navigate('/full-table')}
+          >
+            Full Table View
+          </button>
+        </div>
         <div className="error-state">
           <p>{error}</p>
         </div>
@@ -110,7 +128,15 @@ function SalesPage() {
 
   return (
     <div className="sales-page">
-      <h2>Transactions</h2>
+      <div className="sales-page-header">
+        <h2>Transactions</h2>
+        <button
+          className="full-table-button"
+          onClick={() => navigate('/full-table')}
+        >
+          Full Table View
+        </button>
+      </div>
       <SearchBar value={search} onChange={setSearch} />
       <FilterPanel
         gender={gender}
