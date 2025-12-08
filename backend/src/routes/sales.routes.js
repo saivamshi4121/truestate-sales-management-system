@@ -5,7 +5,7 @@
 
 const express = require('express');
 const router = express.Router();
-const { getSalesController } = require('../controllers/sales.controller');
+const { getSalesController, getSalesSummaryController } = require('../controllers/sales.controller');
 
 /**
  * GET /api/sales
@@ -28,5 +28,12 @@ const { getSalesController } = require('../controllers/sales.controller');
  */
 router.get('/', getSalesController);
 
+/**
+ * GET /api/sales/summary
+ * Get sales summary statistics (total units, total amount, total discount)
+ */
+router.get('/summary', getSalesSummaryController);
+
 module.exports = router;
+
 

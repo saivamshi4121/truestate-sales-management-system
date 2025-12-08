@@ -38,3 +38,4 @@ module.exports = {
   CREATE_SALES_TABLE_QUERY
 };
 
+

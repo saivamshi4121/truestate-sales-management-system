@@ -42,3 +42,4 @@ function Pagination({ page, totalPages, onNext, onPrev }) {
 
 export default Pagination
 
+

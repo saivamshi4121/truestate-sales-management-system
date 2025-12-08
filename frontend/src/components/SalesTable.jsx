@@ -62,3 +62,4 @@ function SalesTable({ data = [] }) {
 
 export default SalesTable;
 
+

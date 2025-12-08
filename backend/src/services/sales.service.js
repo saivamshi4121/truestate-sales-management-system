@@ -176,7 +176,37 @@ async function getSales(filters = {}) {
   }
 }
 
+/**
+ * Get sales summary statistics
+ * @returns {Object} - { totalUnits, totalAmount, totalDiscount }
+ */
+async function getSalesSummary() {
+  const summaryQuery = `
+    SELECT 
+      COALESCE(SUM(quantity), 0) as total_units,
+      COALESCE(SUM(total_amount), 0) as total_amount,
+      COALESCE(SUM(total_amount - final_amount), 0) as total_discount
+    FROM sales_transactions
+  `;
+
+  try {
+    const result = await pool.query(summaryQuery);
+    const row = result.rows[0];
+
+    return {
+      totalUnits: parseInt(row.total_units, 10) || 0,
+      totalAmount: parseFloat(row.total_amount) || 0,
+      totalDiscount: parseFloat(row.total_discount) || 0
+    };
+  } catch (error) {
+    console.error('Error in getSalesSummary service:', error);
+    throw error;
+  }
+}
+
 module.exports = {
-  getSales
+  getSales,
+  getSalesSummary
 };
+
 

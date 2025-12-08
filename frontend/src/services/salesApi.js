@@ -4,6 +4,26 @@
  */
 
 /**
+ * Fetch sales summary statistics
+ * @returns {Promise<Object>} - Summary data with totalUnits, totalAmount, totalDiscount
+ */
+export async function fetchSalesSummary() {
+  try {
+    const response = await fetch('/api/sales/summary');
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching sales summary:', error);
+    throw error;
+  }
+}
+
+/**
  * Fetch sales data with pagination, search, filters, and sorting
  * @param {Object} params - Query parameters
  * @param {number} params.page - Page number (default: 1)

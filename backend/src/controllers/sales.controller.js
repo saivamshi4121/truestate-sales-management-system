@@ -3,7 +3,7 @@
  * Handles HTTP requests and responses for sales endpoints
  */
 
-const { getSales } = require('../services/sales.service');
+const { getSales, getSalesSummary } = require('../services/sales.service');
 
 /**
  * Get sales with filters, search, sorting, and pagination
@@ -116,7 +116,27 @@ async function getSalesController(req, res) {
   }
 }
 
+/**
+ * Get sales summary statistics
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ */
+async function getSalesSummaryController(req, res) {
+  try {
+    const summary = await getSalesSummary();
+    res.json(summary);
+  } catch (error) {
+    console.error('Error in getSalesSummaryController:', error);
+    res.status(500).json({
+      error: 'Internal server error',
+      message: error.message
+    });
+  }
+}
+
 module.exports = {
-  getSalesController
+  getSalesController,
+  getSalesSummaryController
 };
+
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { fetchSales } from '../services/salesApi'
+import SummaryCards from '../components/SummaryCards'
 import SalesTable from '../components/SalesTable'
 import SearchBar from '../components/SearchBar'
 import FilterPanel from '../components/FilterPanel'
@@ -100,6 +101,7 @@ function SalesPage() {
             Full Table View
           </button>
         </div>
+        <SummaryCards />
         <div className="loading-state">
           <p>Loading...</p>
         </div>
@@ -119,6 +121,7 @@ function SalesPage() {
             Full Table View
           </button>
         </div>
+        <SummaryCards />
         <div className="error-state">
           <p>{error}</p>
         </div>
@@ -137,6 +140,7 @@ function SalesPage() {
           Full Table View
         </button>
       </div>
+      <SummaryCards />
       <SearchBar value={search} onChange={setSearch} />
       <FilterPanel
         gender={gender}
