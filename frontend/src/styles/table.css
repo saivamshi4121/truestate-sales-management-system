@@ -1,0 +1,175 @@
+/* Sales Table - Modern Professional Styling */
+.sales-table-container {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.sales-table-wrapper {
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.sales-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.875rem;
+}
+
+/* Sticky Header */
+.sales-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.sales-table th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+}
+
+/* Table Body */
+.sales-table tbody {
+  background-color: #ffffff;
+}
+
+.sales-table td {
+  padding: 1rem 1.25rem;
+  color: #374151;
+  font-size: 0.875rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+/* Alternate Row Colors */
+.sales-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.sales-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Row Hover Effect */
+.sales-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.sales-table tbody tr:hover {
+  background-color: #f3f4f6 !important;
+  cursor: pointer;
+}
+
+/* Remove border from last row */
+.sales-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Empty State */
+.sales-table-empty {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.sales-table-empty p {
+  color: #6b7280;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Scrollbar Styling */
+.sales-table-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.sales-table-wrapper::-webkit-scrollbar-track {
+  background: #f9fafb;
+}
+
+.sales-table-wrapper::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.sales-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sales-table-wrapper {
+    max-height: 50vh;
+  }
+
+  .sales-table th,
+  .sales-table td {
+    padding: 0.875rem 1rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sales-table-wrapper {
+    max-height: 45vh;
+  }
+
+  .sales-table {
+    font-size: 0.75rem;
+  }
+
+  .sales-table th {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.75rem;
+  }
+
+  .sales-table td {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.75rem;
+  }
+
+  .sales-table th,
+  .sales-table td {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .sales-table-container {
+    border-radius: 8px;
+  }
+
+  .sales-table-wrapper {
+    max-height: 40vh;
+  }
+
+  .sales-table th,
+  .sales-table td {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.6875rem;
+  }
+}
+

@@ -1,0 +1,182 @@
+/* Filter Panel - SaaS Style */
+.filter-panel {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.filter-field {
+  position: relative;
+  flex: 0 1 auto;
+  min-width: 140px;
+}
+
+.filter-field-number {
+  min-width: 110px;
+}
+
+.filter-field-date {
+  min-width: 160px;
+}
+
+.filter-input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  background-color: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.filter-input:hover {
+  background-color: #ffffff;
+  border-color: #d1d5db;
+}
+
+.filter-input:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Active Filter Indicator */
+.filter-field.active .filter-input {
+  background-color: #ffffff;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.filter-field.active::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background-color: #667eea;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  z-index: 1;
+}
+
+/* Select Styling */
+select.filter-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.filter-input option {
+  background-color: #ffffff;
+  color: #374151;
+  padding: 0.5rem;
+}
+
+/* Number Input Styling */
+.filter-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.filter-input[type="number"]::-webkit-inner-spin-button,
+.filter-input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Date Input Styling */
+.filter-input[type="date"] {
+  position: relative;
+}
+
+.filter-input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  margin-left: 0.5rem;
+}
+
+.filter-input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .filter-field {
+    min-width: 130px;
+  }
+
+  .filter-field-number {
+    min-width: 100px;
+  }
+
+  .filter-field-date {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-panel {
+    padding: 1rem;
+  }
+
+  .filter-bar {
+    gap: 0.625rem;
+  }
+
+  .filter-field {
+    flex: 1 1 calc(50% - 0.625rem);
+    min-width: 140px;
+  }
+
+  .filter-field-number {
+    flex: 1 1 calc(50% - 0.625rem);
+    min-width: 100px;
+  }
+
+  .filter-field-date {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  .filter-input {
+    font-size: 0.8125rem;
+    padding: 0.5625rem 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-field {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  .filter-field-number {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+}
+

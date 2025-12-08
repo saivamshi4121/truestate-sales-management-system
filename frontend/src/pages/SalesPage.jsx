@@ -159,8 +159,9 @@ function SalesPage() {
         setStartDate={setStartDate}
         endDate={endDate}
         setEndDate={setEndDate}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
       />
-      <SortDropdown sortBy={sortBy} setSortBy={setSortBy} />
       <SalesTable data={data} />
       <Pagination
         page={page}
